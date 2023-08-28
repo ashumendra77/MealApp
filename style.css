@@ -20,3 +20,22 @@ align-items: center;
     padding-top: 20;
     width: 100%;
 }
+
+
+.fa-cart-plus{
+    color: white;
+}
+/* Detail Meal page Style */
+
+.d-image{
+    width: 100%;
+    height: 50vh;
+    background-color: red;
+
+}
+
+.d-h{
+    text-align: center;
+    color: black;
+    margin: 10px 0px;
+}
