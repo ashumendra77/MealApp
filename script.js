@@ -22,8 +22,8 @@ console.log(searchButton);
             <div class="card-body">
                 <h5 class="card-title">${values.strMeal.substr(0,20)}...</h5>
                 <p class="card-text">${values.strInstructions.substr(0,60)}...</p>
-                <a href="#" class="btn btn-primary">Read more</a>
-                <a href="#" class="btn btn-primary"><i class="fa-sharp fa-regular fa-cart-plus"></i></a>
+                <a href="./detailMeal.html" class="btn btn-primary">Read more</a>
+                <a href="#" class="btn btn-primary" style="border-radius:50%"> <i class="fa-solid fa-heart"></i></a>
             </div>
         </div>`
         })
