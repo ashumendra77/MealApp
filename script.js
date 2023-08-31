@@ -22,13 +22,13 @@ function fetchApi() {
             <div class="card-body">
                 <h5 class="card-title">${values.strMeal.substr(0, 20)}...</h5>
                 <p class="card-text">${values.strInstructions.substr(0, 60)}...</p>
-                <a href="./detailMeal.html" class="btn btn-primary" >Read more</a>
+                <button src="./detailMeal.html" type="button" class="btn btn-outline-light" onclick="showMealDetail()">More Details</button>
                 <a href="#" class="btn btn-primary" style="border-radius:50%"> <i class="fa-solid fa-heart"></i></a>
             </div>
         </div>`
             })
 
-            let check = document.getElementById('main-body').innerHTML = displayData;
+            let check = document.querySelector('#main-body').innerHTML = displayData;
             console.log(check);
         }
         ).catch(function (err) {
@@ -57,29 +57,25 @@ function showMealDetail() {
             //     console.log(values.strMeal);
             console.log(data.meals[0].idMeal);
             displayDetails += `<div id="meal-details" class="mb-5">
-            <div id="meal-header" class="d-flex justify-content-around flex-wrap">
-              <div id="meal-thumbail">
-                <img class="mb-2" src="${data.meals[0].strMealThumb}" alt="" srcset="">
-              </div>
-              <div id="details">
-                <h3>${data.meals[0].strMeal}</h3>
-                <h6>Category : ${data.meals[0].strCategory}</h6>
-                <h6>Area : ${data.meals[0].strArea}</h6>
-              </div>
-            </div>
-            <div id="meal-instruction" class="mt-3">
-              <h5 class="text-center">Instruction :</h5>
-              <p>${data.meals[0].strInstructions}</p>
+            <img class="d-image"
+            src=${data.meals[0].strMealThumb}
+            alt="Veg Meal">
+        <h1 class="d-h">Veg Manchurion</h1>
             </div>`;
-           
+
         });
-        // .catch(function (err) {
-        //     console.log(err);
-        // })
-console.log(displayDetails);
-        // let details = 
-        document.getElementById("Meal-details").innerHTML = displayDetails;
-        // console.log(details);
+        document.querySelector("#details").innerHTML = displayDetails;
+
+   
 }
 
-showMealDetail();
+// showMealDetail();
+ // .catch(function (err) {
+    //     console.log(err);
+    // })
+    // console.log(displayDetails);
+    //         // let details = 
+    // console.log(details);
+
+
+   
