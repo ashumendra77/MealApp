@@ -21,14 +21,14 @@ function fetchApi() {
             <img src=${values.strMealThumb} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${values.strMeal.substr(0, 20)}...</h5>
-                <p class="card-text">${values.strInstructions.substr(0, 60)}...</p>
-              <a href= "detailMeal.html" class="btn btn-outline-light" onclick="storeData(${values.idMeal})">More Details</a>
+                <p class="card-text">${values.strInstructions.substr(0, 50)}...</p>
+              <a href= "detailMeal.html" class="btn btn-outline-dark" onclick="storeData(${values.idMeal})">More Details</a>
 
-                <a href="#" class="btn btn-primary" style="border-radius:50%"> <i class="fa-solid fa-heart"></i></a>
+                <a href="#" class="btn btn-primary">Add</a>
             </div>
         </div>`
             })
-
+// style="border-radius:50%
             let check = document.getElementById('main-body').innerHTML = displayData;
             console.log(check);
         }
