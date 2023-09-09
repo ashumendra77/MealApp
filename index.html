@@ -29,7 +29,7 @@
 
             </form>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
+                aria-controls="offcanvasNavbar" onclick="showFavMealList()">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -39,7 +39,8 @@
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Favourite Meal</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div id="favourites-body"
+                class="offcanvas-body d-flex justify-content-center flex-wrap">
 
 
                 </div>
