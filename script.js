@@ -36,7 +36,7 @@ function fetchApi() {
                 <p class="card-text">${values.strInstructions.substr(0, 50)}...</p>
               <a href= "detailMeal.html" class="btn btn-outline-dark" onclick="storeData(${values.idMeal})">More Details</a>
 
-                <a href="#" class="btn btn-primary" style="background-color: #ff0000;" onclick="addRemoveToFavList(${values.idMeal})" >Add</a>
+                <a href="#" class="btn btn-primary" style="background-color: #ff0000;" onclick="addRemoveToFavList(${values.idMeal})" >Remove</a>
             </div>
         </div>`
 
@@ -148,8 +148,8 @@ async function showFavMealList() {
                     <div class="card-body">
                         <h5 class="card-title">${data.meals[0].strMeal}</h5>
                         <div class="d-flex justify-content-between mt-5">
-                            <button type="button" id="details-btn" class="btn btn-outline-light" onclick="showMealDetails(${data.meals[0].idMeal})">More Details</button>
-                            <button id="main${data.meals[0].idMeal}" class="btn btn-outline-light active" onclick="addRemoveToFavList(${data.meals[0].idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button>
+                            <button type="button" id="details-btn" class="btn btn-outline-dark" onclick="showMealDetails(${data.meals[0].idMeal})">More Details</button>
+                            <button id="main${data.meals[0].idMeal}" class="btn btn-outline-dark active" onclick="addRemoveToFavList(${data.meals[0].idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button>
                         </div>
                     </div>
                 </div>

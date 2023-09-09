@@ -20,12 +20,15 @@
 <body>
     <!-- Navbar section  -->
     <nav class="navbar bg-light">
-        <div class="container-fluid">
+        <div class="container-fluid justify-content-between">
+            <h1 class="heading">MealApp</h1>
+
             <form class="d-flex" role="search">
-                <h1 class="heading">MealApp</h1>
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <div class="d-flex justify-content-around">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success search" type="submit">Search</button>
-                <button class="btn btn-outline-success" type="submit">My fav</button>
+                </div>
+                
 
             </form>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
