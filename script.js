@@ -52,16 +52,7 @@ function fetchApi() {
                     </div>
                 </div>`;
                     }
-                    //         displayData += `<div class="card" style="width: 18rem;">
-                    //     <img src=${values.strMealThumb} class="card-img-top" alt="...">
-                    //     <div class="card-body">
-                    //         <h5 class="card-title">${values.strMeal.substr(0, 20)}...</h5>
-                    //         <p class="card-text">${values.strInstructions.substr(0, 50)}...</p>
-                    //       <a href= "detailMeal.html" class="btn btn-outline-dark" onclick="storeData(${values.idMeal})">More Details</a>
-
-                    //         <a href="#" class="btn btn-primary" style="background-color: #ff0000;">Add</a>
-                    //     </div>
-                    // </div>`
+                 
                 });
             } else {
                 displayData += `
