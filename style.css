@@ -43,7 +43,7 @@ align-items: center;
     width: 100%;
     padding: 20px;
     border-radius: 20px;
-    background-color: #FF3044;
+    /* background-color: #FF3044; */
 }
 
 #meal-header {
@@ -68,4 +68,9 @@ align-items: center;
 #meal-instruction {
     margin: auto;
     text-align: center;
+    font-size: large;
+}
+
+.youtubeButton{
+    margin: auto;
 }

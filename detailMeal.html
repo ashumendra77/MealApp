@@ -24,13 +24,16 @@
                     console.log(data);
                     console.log(data.meals[0].idMeal);
                     displayDetails += `<div id="meal-details" class="mb-5">
-            <img class="d-image"
+            <img class="d-image" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; border-radius:10px"
             src=${data.meals[0].strMealThumb}
             alt="Veg Meal">
         <h1 class="d-h">${data.meals[0].strMeal}</h1>
-        <p style="padding:20px"> ${data.meals[0].strInstructions}</p>
-        <a href="${data.meals[0].strYoutube}" class="btn btn-primary" style="border-radius:50%">
-            <button  type="button" class="btn btn-outline-light" onclick="showMealDetail()">Check on Youtube</button></i></a>
+        <p id="meal-instruction" style="padding:20px"> ${data.meals[0].strInstructions}</p>
+        <a  class="youtubeButton" href="${data.meals[0].strYoutube}" class="btn btn-primary" style="border-radius:50%">
+            <button  type="button" class="btn btn-outline-dark" onclick="${data.meals[0].strYoutube}">Check on Youtube</button></a>
             </div>`;
                     document.getElementById('details').innerHTML = displayDetails;
 
