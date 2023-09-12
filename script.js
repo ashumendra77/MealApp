@@ -4,16 +4,11 @@ if (localStorage.getItem("favouritesMeal") == null) {
 }
 
 
-// taking values from  search button
-
-// let searchButton = document.getElementById('searchInput').value;
-// console.log(searchButton);
-
 function checkMeal() {
     let searchButton = document.getElementById('searchInput').value;
-    console.log(searchButton);
+    // console.log(searchButton);
     if (!searchButton) {
-        document.getElementById('main-body').innerHTML = `<h2 style="text-align:center; margin:auto">Not found! Please search your Meal...</h2>`
+        document.getElementById('main-body').innerHTML += `<h2 style="text-align:center; margin:auto">Not found! Please search your Meal...</h2>`
     } else { fetchApi() }
 
 }
@@ -21,25 +16,27 @@ function checkMeal() {
 
 
 function fetchApi() {
+    //taking input value
     let searchButton = document.getElementById('searchInput').value;
-    console.log(searchButton);
+    // console.log(searchButton);
+    // Taking arr is exist
     let arr = JSON.parse(localStorage.getItem("favouritesMeal"));
     let url = "https://www.themealdb.com/api/json/v1/1/search.php?s="
     fetch(`${url + searchButton}`)
         .then(res => res.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             let displayData = "";
             if (data.meals) {
                 data.meals.map(values => {
-                    console.log(values.strMeal);
+                    // console.log(values.strMeal);
                     let isFav = false;
                     for (let index = 0; index < arr?.length; index++) {
                         if (arr[index] == values.idMeal) {
                             isFav = true;
                         }
                     }
-                    console.log(values.strMeal);
+                    // console.log(values.strMeal);
 
                     if (isFav) {
                         displayData += `<div class="card" style="width: 18rem;">
@@ -84,14 +81,14 @@ function fetchApi() {
                 `;
             }
             let check = document.getElementById('main-body').innerHTML = displayData;
-            console.log(check);
-            console.log(searchButton)
+            // console.log(check);
+            // console.log(searchButton)
         }).catch(function (err) {
             console.log(err);
         })
 }
 
-// fetchApi();
+// it will set ID to localstorage
 
 function storeData(id) {
     const data = id;
@@ -142,7 +139,7 @@ async function showFavMealList() {
 }
 
 
-
+// add and remove meal from fav list
 function addRemoveToFavList(id) {
     let arr = JSON.parse(localStorage.getItem("favouritesMeal"));
     let contain = false;

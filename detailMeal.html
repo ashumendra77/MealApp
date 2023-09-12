@@ -13,16 +13,18 @@
     </div>
 
     <script>
+        // Function to show meal 
         function showMealDetail() {
             let displayDetails = "";
+            // It will get Id which we set 
             const id = localStorage.getItem('MealId');
-            console.log(id);
+            // console.log(id);
 
             fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id)
                 .then(res => res.json())
                 .then((data) => {
-                    console.log(data);
-                    console.log(data.meals[0].idMeal);
+                    // console.log(data);
+                    // console.log(data.meals[0].idMeal);
                     displayDetails += `<div id="meal-details" class="mb-5">
             <img class="d-image" style="display: block;
   margin-left: auto;
