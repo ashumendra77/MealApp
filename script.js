@@ -6,13 +6,13 @@ if (localStorage.getItem("favouritesMeal") == null) {
 
 // select search button
 
-let searchButton = document.getElementsByClassName('search').values;
+let searchButton = document.getElementById('searchInput').value;
 console.log(searchButton);
 
 function fetchApi() {
     let arr = JSON.parse(localStorage.getItem("favouritesMeal"));
 
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=c')
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchButton}`)
         .then(res => res.json())
         .then((data) => {
             console.log(data);
@@ -52,7 +52,7 @@ function fetchApi() {
                     </div>
                 </div>`;
                     }
-                 
+
                 });
             } else {
                 displayData += `
@@ -77,7 +77,7 @@ function fetchApi() {
         })
 }
 
-fetchApi();
+// fetchApi();
 
 function storeData(id) {
     const data = id;
@@ -132,7 +132,7 @@ async function showFavMealList() {
             `;
     } else {
         for (let index = 0; index < arr.length; index++) {
-            await fetch(url+arr[index]).then(res => res.json()).then((data) => {
+            await fetch(url + arr[index]).then(res => res.json()).then((data) => {
                 html += `
                 <div id="card" class="card mb-3" style="width: 20rem;">
                     <img src="${data.meals[0].strMealThumb}" class="card-img-top" alt="...">
