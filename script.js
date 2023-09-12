@@ -4,22 +4,25 @@ if (localStorage.getItem("favouritesMeal") == null) {
 }
 
 
-// select search button
+// taking values from  search button
 
-let searchButton = document.getElementById('searchInput').value;
-console.log(searchButton);
+// let searchButton = document.getElementById('searchInput').value;
+// console.log(searchButton);
 
-function checkMeal(){
-    if(!searchButton){
-        html+=`<h1>not found</h1>`
-    }else{fetchApi()}
+function checkMeal() {
+    let searchButton = document.getElementById('searchInput').value;
+    console.log(searchButton);
+    if (!searchButton) {
+        document.getElementById('main-body').innerHTML = `<h2 style="text-align:center; margin:auto">Not found! Please search your Meal...</h2>`
+    } else { fetchApi() }
+
 }
 
 
 
 function fetchApi() {
     let searchButton = document.getElementById('searchInput').value;
-console.log(searchButton);
+    console.log(searchButton);
     let arr = JSON.parse(localStorage.getItem("favouritesMeal"));
     let url = "https://www.themealdb.com/api/json/v1/1/search.php?s="
     fetch(`${url + searchButton}`)
@@ -96,31 +99,6 @@ function storeData(id) {
 }
 
 
-// Show Meal details 
-
-// function showMealDetail(id) {
-//     // console.log(id)
-//     // storeData(id)
-//     let displayDetails = "";
-
-//     fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772")
-//         .then(res => res.json())
-//         .then((data) => {
-//             console.log(data);
-//             console.log(data.meals[0].idMeal);
-//             displayDetails += `<div id="meal-details" class="mb-5">
-//             <img class="d-image"
-//             src=${data.meals[0].strMealThumb}
-//             alt="Veg Meal">
-//         <h1 class="d-h">Veg Manchurion</h1>
-//             </div>`;
-//             document.getElementById('details').innerHTML = displayDetails;
-
-//         });
-
-
-//  }
-
 //show fav list
 async function showFavMealList() {
     let arr = JSON.parse(localStorage.getItem("favouritesMeal"));
@@ -150,8 +128,9 @@ async function showFavMealList() {
                     <div class="card-body">
                         <h5 class="card-title">${data.meals[0].strMeal}</h5>
                         <div class="d-flex justify-content-between mt-5">
-                            <button type="button" id="details-btn" class="btn btn-outline-dark" onclick="showMealDetails(${data.meals[0].idMeal})">More Details</button>
-                            <button id="main${data.meals[0].idMeal}" class="btn btn-outline-dark active" onclick="addRemoveToFavList(${data.meals[0].idMeal})" style="border-radius:50%"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></button>
+                        <a href= "detailMeal.html" class="btn btn-outline-dark" onclick="storeData(${data.meals[0].idMeal})">More Details</a>
+        
+                        <a href="#" class="btn btn-primary" style="background-color: blue;" onclick="addRemoveToFavList(${data.meals[0].idMeal})" >Remove</a>
                         </div>
                     </div>
                 </div>

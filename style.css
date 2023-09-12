@@ -17,6 +17,7 @@ align-items: center;
 .card-img-top{
     padding-top: 20;
     width: 100%;
+    object-fit: contain;
 }
 
 
@@ -72,5 +73,14 @@ align-items: center;
 }
 
 .youtubeButton{
-    margin: auto;
+   background-color: aqua;
+   display: flex;
+   margin: auto;
+   padding: 10px;
+   font-weight: 800;
+}
+
+.link{
+  text-decoration: none;
+  
 }

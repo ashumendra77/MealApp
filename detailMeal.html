@@ -32,8 +32,8 @@
             alt="Veg Meal">
         <h1 class="d-h">${data.meals[0].strMeal}</h1>
         <p id="meal-instruction" style="padding:20px"> ${data.meals[0].strInstructions}</p>
-        <a  class="youtubeButton" href="${data.meals[0].strYoutube}" class="btn btn-primary" style="border-radius:50%">
-            <button  type="button" class="btn btn-outline-dark" onclick="${data.meals[0].strYoutube}">Check on Youtube</button></a>
+        <a  class='link' href="${data.meals[0].strYoutube}" class="btn btn-primary" style="border-radius:50%">
+            <button  type="button" class="youtubeButton" class="btn btn-outline-dark" onclick="${data.meals[0].strYoutube}">Check on Youtube</button></a>
             </div>`;
                     document.getElementById('details').innerHTML = displayDetails;
 
